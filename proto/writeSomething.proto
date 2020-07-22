@@ -1,0 +1,15 @@
+syntax = "proto3";
+// protoc --go_out=plugins=grpc:. ./proto/writeSomething.proto
+package writeSomething;
+
+service Write {
+    rpc WriteSomething(WriteRequest) returns (WriteResult) {}
+}
+
+message WriteRequest {
+    string content = 1;
+}
+
+message WriteResult {
+    bool result = 1;
+}
